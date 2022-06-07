@@ -1,52 +1,29 @@
 html, body, #app {
+    color: var(--main-white-color);
     margin: 0px;
     padding: 0px;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--main-white-color);
 }
 
 * {
     box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20%;
+    overflow: hidden;
+    height: 100vh;
+    padding: 10px;
 
 }
 
 :root {
-    --main-white-color: rgb(233, 233, 233);
+    --main-white-color: rgb(224, 224, 224);
     --main-black-color: #121212;
-    --main-orange-color: #FFA500;
-    --main-grey-color: rgb(184, 184, 184);
-}
-
-button, input {
-    background-color: transparent;
-    padding: 10px;
-    border: 1px solid var(--main-grey-color);
-    color: rgb(241, 241, 241);
-
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-
-    -webkit-transition: 0.3s ease-in;
-    -moz-transition: 0.3s ease-in;
-    -o-transition: 0.3s ease-in;
-    transition: 0.3s ease-in;
-}
-.flexrow {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.flexcolumn {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
+    --main-color: #433574;
+    --main-grey-color: rgb(224, 224, 224);
 }

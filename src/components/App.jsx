@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
-const App = ({ children }) => (
+import MainContainer from './MainContainer'
+
+
+export default function App(props){
+  return (
   <main>
     <Header />
-    {children}
+    <MainContainer />
   </main>
-)
+  )
+}
 
-export default App
+
+
