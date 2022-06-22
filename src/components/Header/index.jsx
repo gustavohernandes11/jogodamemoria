@@ -2,10 +2,13 @@ import * as React from 'react'
 import styles from './Header.module.css'
 
 const Header = () => (
-  <header id="#headerPage" className={styles.header}>
+  <header className={styles.header}>
     <title>Jogo da Memória</title>
-    <b>Jogo da Memória</b>
-    <p>matches: 0</p>
+    <h1>Jogo da Memória</h1>
+    <div className={styles.score}>
+      <p>matches: 0</p>
+      <p>Passos: 0</p>
+    </div>
   </header>
 
 )

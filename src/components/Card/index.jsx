@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Card.module.css'
 
-export default function Card({ isOpen, cardFront, cardBack, onClick }) {
 
+export default function Card({ flipped = false, back, id, handleClick }) {
+
+    function handleClickFn(id) {
+        if (handleClick) {
+            handleClick(id)
+        }
+    }
     return (
         <>
-            {isOpen ? (
-                <div className={styles.cardfront} onClick={onClick}>
-                    {cardFront}
-                </div>
-            ) : (
-                <div className={styles.cardback} >
-                    {cardBack}
-                </div>
-            )}
-
+            <div className={!flipped ? styles.cardfront : styles.cardback}
+                id={id}
+                onClick={() => handleClickFn(id)}
+            >
+                {!flipped ? "?" : back}
+            </div>
 
         </>
     )

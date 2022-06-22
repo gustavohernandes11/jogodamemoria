@@ -1,99 +1,42 @@
-const cards = [{
-    value: '1', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '2', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '3', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '4', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '5', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '6', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '7', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '8', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '1', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '2', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '3', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '4', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '5', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '6', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '7', 
-    isMatched: false,
-    isOpen: false
-
-},
-{
-    value: '8', 
-    isMatched: false,
-    isOpen: false
-
-},
+export const initialCards = [
+    {
+        value: 'Valor 1',
+        id: 1,
+        flipped: false
+    },
+    {
+        value: 'Valor 2',
+        id: 2,
+        flipped: false
+    },
+    {
+        value: 'Valor 3',
+        id: 3,
+        flipped: false
+    },
+    {
+        value: 'Valor 4',
+        id: 4,
+        flipped: false
+    },
+    {
+        value: 'Valor 5',
+        id: 5,
+        flipped: false
+    },
+    {
+        value: 'Valor 6',
+        id: 6,
+        flipped: false
+    },
+    {
+        value: 'Valor 7',
+        id: 7,
+        flipped: false
+    },
+    {
+        value: 'Valor 8',
+        id: 8,
+        flipped: false
+    }
 ]
-
-export default cards
