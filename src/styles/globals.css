@@ -9,6 +9,7 @@ html, body, #app {
 
 * {
     box-sizing: border-box;
+    font-family: century-gothic, sans-serif;
 }
 
 main {

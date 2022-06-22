@@ -2,17 +2,21 @@
     background-color: rgb(214, 214, 214);
     border: 1px solid var(--main-color);
     color: var(--main-color);
-    font-size:xx-large;
     font-weight: 100;
+    font-size: 20px;
+
 }
 .cardfront:hover{
     cursor:pointer;
+    
 }
 .cardback:hover {
     cursor: pointer;
 }
 .cardback{
     background-color: var(--main-color);
+    font-size: 50px;
+
 
 }
 .cardfront, .cardback {
@@ -22,9 +26,7 @@
     height: 100px;
     flex-basis: 23%;
     border-radius: 5px;
-    padding: 20px;
     display: flex;
-    flex-grow: 1;
     align-items: center;
     justify-content: center;
 }

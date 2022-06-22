@@ -9,9 +9,13 @@ import Card from '../Card'
 
 export default function App() {
     const [cards, setCards] = useState(() => shuffleDuplicateSetRandomId(initialCards))
-    
+    const [matches, setMatches] = useState(0)
+    const [steps, setSteps] = useState(0)
+
     function resetCards() {
         setCards(() => shuffleDuplicateSetRandomId(initialCards));
+        setSteps(() => 0)
+        setMatches(() => 0)
         first.current = null
         second.current = null
         unflip.current = false
@@ -42,6 +46,7 @@ export default function App() {
 
 
             if (card.id === id) {
+                setSteps((s) => s + 1)
                 if (!first.current) {
                     first.current = card
                     card.flipped = true
@@ -49,6 +54,9 @@ export default function App() {
                 } else if (!second.current) {
                     second.current = card
                     card.flipped = true
+                    if (first.current.value === second.current.value) {
+                        setMatches((m) => m + 2)
+                    }
                     return card
                 }
             }
@@ -63,10 +71,11 @@ export default function App() {
 
     return (
         <>
-            <Header />
+            <Header matches={matches} steps={steps} totalCards={cards.length} />
             <div className={styles.board} id="table">
                 {cards?.map((e, i) => <Card
-                    back={e.value}
+                    value={e.value}
+                    alt={e.alt}
                     id={e.id}
                     flipped={e.flipped}
                     handleClick={handleClick}

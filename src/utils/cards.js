@@ -1,41 +1,49 @@
 export const initialCards = [
     {
-        value: 'Valor 1',
+        value: '🦖',
+        alt: "Dinossauro",
         id: 1,
         flipped: false
     },
     {
-        value: 'Valor 2',
+        value: '🐠',
+        alt: "Peixe",
         id: 2,
         flipped: false
     },
     {
-        value: 'Valor 3',
+        value: '🐛',
+        alt: "Inseto",
         id: 3,
         flipped: false
     },
     {
-        value: 'Valor 4',
+        value: '🐇',
+        alt: "Coelho",
         id: 4,
         flipped: false
     },
     {
-        value: 'Valor 5',
+        value: '🐕‍🦺',
+        alt: "Cachorro",
         id: 5,
         flipped: false
     },
     {
-        value: 'Valor 6',
+        value: '🐒',
+        alt: "Macaco",
         id: 6,
         flipped: false
     },
     {
-        value: 'Valor 7',
+        value: '🐑',
+        alt: "Ovelha",
         id: 7,
         flipped: false
     },
     {
-        value: 'Valor 8',
+        value: '🐘',
+        alt: "Elefante",
         id: 8,
         flipped: false
     }
