@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './Footer.module.css'
 
-export function Footer({ children }) {
+function Footer({ children, onClick }) {
     return (
         <footer className={styles.footer}>
-            { children }
+            <button onClick={onClick}>Reiniciar</button>
         </footer>
     )
 }
+
+export default Footer

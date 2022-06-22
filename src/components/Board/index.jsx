@@ -2,10 +2,20 @@ import React, { useState, useRef } from 'react'
 import { shuffleDuplicateSetRandomId } from '../../utils/deckFunctions'
 import { initialCards } from '../../utils/cards'
 import styles from './Board.module.css'
+
+import Header from '../Header'
+import Footer from '../Footer'
 import Card from '../Card'
 
 export default function App() {
     const [cards, setCards] = useState(() => shuffleDuplicateSetRandomId(initialCards))
+    
+    function resetCards() {
+        setCards(() => shuffleDuplicateSetRandomId(initialCards));
+        first.current = null
+        second.current = null
+        unflip.current = false
+    }
 
     function handleClick(id) {
         const newCards = cards
@@ -52,15 +62,18 @@ export default function App() {
     const unflip = useRef(false)
 
     return (
-        <div className={styles.board} id="table">
-            {cards?.map((e, i) => <Card
-                back={e.value}
-                id={e.id}
-                flipped={e.flipped}
-                handleClick={handleClick}
-                key={i}
-            />)}
-        </div>
-
+        <>
+            <Header />
+            <div className={styles.board} id="table">
+                {cards?.map((e, i) => <Card
+                    back={e.value}
+                    id={e.id}
+                    flipped={e.flipped}
+                    handleClick={handleClick}
+                    key={i}
+                />)}
+            </div>
+            <Footer onClick={resetCards} />
+        </>
     )
 }

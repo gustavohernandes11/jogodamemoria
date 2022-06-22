@@ -1,11 +1,22 @@
 .footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--main-color);
+    justify-content: flex-end;
     margin: 0px 5px 10px 5px;
-    padding: 10px 30px;
+    padding: 20px 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.295);
 
+}
+
+.footer button {
+    border: none;
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    padding: 10px;
+    color: var(--main-color);
+    border-radius: 5px;
+}
+
+.footer button:hover {
+    cursor: pointer;
 }
