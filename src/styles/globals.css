@@ -4,7 +4,7 @@ html, body, #app {
     padding: 0px;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     scroll-behavior: smooth;
-    background-color: var(--main-white-color);
+    background-color: var(--main-bg-color);
 }
 
 * {
@@ -14,17 +14,19 @@ html, body, #app {
 
 main {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 0 25%;
+    margin: 0 auto;
+    max-width: 600px;
     overflow: hidden;
     height: 100vh;
-    padding: 50px;
 
 }
 
 :root {
     --main-white-color: rgb(224, 224, 224);
-    --main-black-color: #121212;
-    --main-color: #433574;
-    --main-grey-color: rgb(224, 224, 224);
+    --main-grey-color: rgb(175, 175, 175);
+    --main-bg-color: #141625;
+    --primary-color: #1f213a;
+    --secondary-color: #3e54a3;
 }

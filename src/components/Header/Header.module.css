@@ -2,13 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
     margin: 0px 5px 10px 5px;
     padding: 10px 30px;
     border-radius: 5px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.295);
 
 }
+
 
 .score {
     display: flex;
@@ -22,5 +23,5 @@
 
 .header h1 {
     font-size: large;
-    font-weight: 300;
+    font-weight: bolder;
 }

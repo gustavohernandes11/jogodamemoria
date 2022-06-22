@@ -1,7 +1,5 @@
 .cardfront{
-    background-color: rgb(214, 214, 214);
-    border: 1px solid var(--main-color);
-    color: var(--main-color);
+    color: var(--main-grey-color);
     font-weight: 100;
     font-size: 20px;
 
@@ -14,18 +12,19 @@
     cursor: pointer;
 }
 .cardback{
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
     font-size: 50px;
 
 
 }
 .cardfront, .cardback {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.192);
+    border: 1px solid rgba(128, 128, 128, 0.514);
+    box-shadow: 4px 4px 10px rgba(82, 82, 82, 0.192);
     margin: 5px;
-    width: 100px;
-    height: 100px;
-    flex-basis: 23%;
+    min-width: 70px;
+    min-height: 90px;
     border-radius: 5px;
+
     display: flex;
     align-items: center;
     justify-content: center;

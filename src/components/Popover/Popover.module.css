@@ -1,0 +1,40 @@
+.popover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popover .popoverBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-color);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.295);
+    padding: 50px;
+    border: 1px solid var(--main-grey-color);
+    border-radius: 5px;
+}
+
+.newgamebutton {
+    margin-top: 50px;
+    background-color: #132874;
+    box-shadow: inherit;
+    border:none;
+    padding: 10px;
+    color: #e9e9e9;
+    border-radius: 5px;
+}
+.newgamebutton:hover {
+    cursor: pointer;
+}

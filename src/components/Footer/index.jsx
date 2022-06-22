@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Footer.module.css'
 
-function Footer({ children, onClick }) {
+function Footer({ onClick, primary }) {
     return (
         <footer className={styles.footer}>
-            <button onClick={onClick}>Reiniciar</button>
+            <button primary={primary} onClick={onClick}>Reiniciar</button>
         </footer>
     )
 }
