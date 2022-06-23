@@ -18,6 +18,8 @@
 
 }
 .cardfront, .cardback {
+    transition: ease-in 0.1s;
+
     border: 1px solid rgba(128, 128, 128, 0.514);
     box-shadow: 4px 4px 10px rgba(82, 82, 82, 0.192);
     margin: 5px;
@@ -29,3 +31,4 @@
     align-items: center;
     justify-content: center;
 }
+
