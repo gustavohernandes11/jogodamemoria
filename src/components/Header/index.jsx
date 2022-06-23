@@ -3,7 +3,6 @@ import styles from './Header.module.css'
 
 const Header = ({ matches = 0, steps = 0, totalCards }) => (
   <header className={styles.header}>
-    <title>Jogo da Memória</title>
     <h1>memory game</h1>
 
     <div className={styles.score}>
