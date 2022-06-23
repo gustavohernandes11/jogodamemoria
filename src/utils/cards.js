@@ -24,8 +24,8 @@ export const initialCards = [
         flipped: false
     },
     {
-        value: '🐕‍🦺',
-        alt: "Cachorro",
+        value: '🦔',
+        alt: "Porco espinho",
         id: 5,
         flipped: false
     },
