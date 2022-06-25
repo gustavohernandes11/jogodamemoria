@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { shuffleDuplicateSetRandomId } from '../../utils/deckFunctions'
-import { initialCards } from '../../utils/cards'
+import { initialCards } from '../../data/cards'
 
 import styles from './Board.module.css'
 
@@ -22,6 +22,13 @@ export default function App() {
         second.current = null
         unflip.current = false
     }
+    
+    function unflipcards() {
+        first.current.flipped = false
+        second.current.flipped = false
+        first.current = null
+        second.current = null
+    }
 
     function handleClick(id) {
         const newCards = cards
@@ -37,10 +44,7 @@ export default function App() {
                     first.current = null
                     second.current = null
                 } else {
-                    first.current.flipped = false
-                    second.current.flipped = false
-                    first.current = null
-                    second.current = null
+                    unflipcards()
                 }
                 unflip.current = false
             }
