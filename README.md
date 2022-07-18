@@ -13,7 +13,7 @@ Antes de iniciar o jogo, o array de cartas iniciais passa por algumas funções 
 Nesse projeto foi bastante abordado o uso de useRef e useState.
 <hr/>
 
-Você pode jogar <a href="gh-memory-game.netlify.app">aqui</a>.
+Você pode jogar <a href="https://gh-memory-game.netlify.app/">aqui</a>.
 
 
 
