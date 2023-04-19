@@ -1,29 +1,28 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    margin: 0px 5px 10px 5px;
-    padding: 10px 30px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.295);
-
+	width: 100%;
 }
-
 
 .score {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    /* font-weight: bold; */
-    font-size: 14px;
+	display: flex;
+	flex-direction: row;
+	margin-left: 20px;
+	font-size: 1rem;
+
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #472c58;
+	margin: 0px 5px 10px 5px;
+	padding: 1rem 3rem;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.295);
 }
 .score > * {
-    margin: 0 10px;
-
+	margin: 0 10px;
 }
 
 .header h1 {
-    font-size: large;
-    font-weight: bolder;
+	font-size: 2rem;
+	font-weight: bolder;
+	margin: 2rem;
+	text-align: center;
 }

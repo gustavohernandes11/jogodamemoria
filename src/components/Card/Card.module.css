@@ -1,34 +1,30 @@
-.cardfront{
-    color: var(--main-grey-color);
-    font-weight: 100;
-    font-size: 20px;
+.cardfront {
+	color: #8e789c;
+	background-color: #472c58;
 
+	font-weight: 700;
+	font-size: 2.25rem;
 }
-.cardfront:hover{
-    cursor:pointer;
-    
+.cardfront:hover {
+	cursor: pointer;
 }
 .cardback:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
-.cardback{
-    background-color: var(--primary-color);
-    font-size: 50px;
-
-
+.cardback {
+	background-color: #686269;
+	font-size: 3.12rem;
 }
-.cardfront, .cardback {
-    transition: ease-in 0.1s;
+.cardfront,
+.cardback {
+	transition: ease-in 0.1s;
 
-    border: 1px solid rgba(128, 128, 128, 0.514);
-    box-shadow: 4px 4px 10px rgba(82, 82, 82, 0.192);
-    margin: 5px;
-    min-width: 70px;
-    min-height: 90px;
-    border-radius: 5px;
+	margin: 0.25rem;
+	min-width: 4.3rem;
+	min-height: 5.6rem;
+	border-radius: 5px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-

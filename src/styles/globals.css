@@ -1,32 +1,52 @@
-html, body, #app {
-    color: var(--main-white-color);
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    scroll-behavior: smooth;
-    background-color: var(--main-bg-color);
+html,
+body,
+#app {
+	color: var(--main-white-color);
+	margin: 0px;
+	padding: 0px;
+	font-family: "Josefin Sans", sans-serif;
+	scroll-behavior: smooth;
+	background-color: var(--main-bg-color);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: century-gothic, sans-serif;
+	box-sizing: border-box;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 600px;
-    overflow: hidden;
-    height: 100vh;
-
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 1rem;
+	max-width: 600px;
+	overflow: hidden;
+	height: 100vh;
 }
 
 :root {
-    --main-white-color: rgb(224, 224, 224);
-    --main-grey-color: rgb(175, 175, 175);
-    --main-bg-color: #141625;
-    --primary-color: #1f213a;
-    --secondary-color: #3e54a3;
+	--main-white-color: rgb(224, 224, 224);
+	--main-grey-color: rgb(175, 175, 175);
+	--main-bg-color: #272727;
+	--primary-color: #1f213a;
+	--secondary-color: #3e54a3;
+}
+
+@media (max-width: 768px) {
+	html,
+	body,
+	button,
+	textarea,
+	input {
+		font-size: 93.75%;
+	}
+}
+@media (max-width: 425px) {
+	html,
+	body,
+	button,
+	textarea,
+	input {
+		font-size: 87.5%;
+	}
 }
