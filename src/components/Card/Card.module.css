@@ -1,30 +1,48 @@
-.cardfront {
-	color: #8e789c;
-	background-color: #472c58;
-
-	font-weight: 700;
-	font-size: 2.25rem;
+.scene {
+	perspective: 600px;
+	display: inline-block;
 }
-.cardfront:hover {
-	cursor: pointer;
-}
-.cardback:hover {
-	cursor: pointer;
-}
-.cardback {
-	background-color: #686269;
-	font-size: 3.12rem;
-}
-.cardfront,
-.cardback {
-	transition: ease-in 0.1s;
-
+.card {
 	margin: 0.25rem;
 	min-width: 4.3rem;
 	min-height: 5.6rem;
-	border-radius: 5px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	position: relative;
 
+	transform-style: preserve-3d;
+	transform-origin: center right;
+	transition: transform 1s;
+}
+.card:hover {
+	cursor: pointer;
+}
+
+.cardFront {
+	font-weight: 700;
+	font-size: 3.12rem;
+	color: #8e789c;
+	background-color: #472c58;
+	transform: rotateY(180deg);
+}
+
+.cardBack {
+	font-size: 2.25rem;
+	background-color: #3c363d;
+}
+.cardFront,
+.cardBack {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.isFlipped {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+.isFlipped:hover {
+	cursor: unset;
 }
