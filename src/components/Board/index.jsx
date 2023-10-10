@@ -30,7 +30,9 @@ export const Board = () => {
 		first.current = null;
 		second.current = null;
 	};
-
+	const isMatchingCards = (firstCard, secondCard) => {
+		return firstCard && secondCard && firstCard.value === secondCard.value;
+	};
 	const handleClick = (id) => {
 		if (!!onPause) return;
 
@@ -53,11 +55,7 @@ export const Board = () => {
 			}
 		});
 
-		if (
-			first?.current &&
-			second?.current &&
-			first.current.value === second.current.value
-		) {
+		if (isMatchingCards(first?.current, second?.current)) {
 			first.current.matched = true;
 			second.current.matched = true;
 			setMatches((m) => m + 2);
