@@ -23,10 +23,6 @@ export const Board = () => {
 		second.current = null;
 		unflip.current = false;
 	};
-	const syncWait = (ms) => {
-		const end = Date.now() + ms;
-		while (Date.now() < end) continue;
-	};
 
 	const unflipCards = () => {
 		first.current.flipped = false;
@@ -36,9 +32,12 @@ export const Board = () => {
 	};
 
 	const handleClick = (id) => {
+		if (!!onPause) return;
+
 		const currentCards = cards;
+
 		let newState = currentCards?.map((card) => {
-			if (card.id !== id || card.matched || onPause) return card;
+			if (card.id !== id || card.matched) return card;
 
 			if (card.id === id) {
 				card.flipped = true;
@@ -75,6 +74,7 @@ export const Board = () => {
 			});
 			first.current = null;
 			second.current = null;
+
 			setCards(() => newCards);
 		}
 		if (
@@ -96,12 +96,11 @@ export const Board = () => {
 				});
 
 				setCards(() => newCards);
+				setOnPause(() => false);
+
 				unflipCards();
 			}, 1000);
-
-			setOnPause(() => false);
 		}
-		//
 
 		setCards(() => newState);
 	};
