@@ -17,18 +17,17 @@ export default function Card({
 	return (
 		<div
 			id={id}
-			className={`${styles.card}`}
+			className={`${styles.card} ${
+				!isFlipped === true ? styles.isFlipped : ""
+			}`}
 			onClick={() => handleClickFn(id)}
 		>
-			{!isFlipped ? (
+			<div className={styles.innerCard}>
 				<div
 					className={`${styles.cardBack} ${
 						wasMatched === true ? styles.wasMatch : ""
 					}`}
-				>
-					{" "}
-				</div>
-			) : (
+				/>
 				<div
 					className={`${styles.cardFront} ${
 						wasMatched === true ? styles.wasMatch : ""
@@ -36,7 +35,7 @@ export default function Card({
 				>
 					<Symbol value={value} alt={alt} />
 				</div>
-			)}
+			</div>
 		</div>
 	);
 }
