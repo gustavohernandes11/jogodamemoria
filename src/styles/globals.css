@@ -19,7 +19,7 @@ main {
 	flex-direction: column;
 	margin: 0 auto;
 	padding: 0 1rem;
-	max-width: 600px;
+	max-width: 32rem;
 	overflow: hidden;
 	height: 100vh;
 }

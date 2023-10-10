@@ -1,9 +1,9 @@
-import React from "react";
 import Symbol from "./Symbol";
 import styles from "./Card.module.css";
 
 export default function Card({
 	isFlipped = false,
+	wasMatched = false,
 	value,
 	id,
 	alt,
@@ -15,17 +15,23 @@ export default function Card({
 		}
 	}
 	return (
-		<div id={id} className={styles.card} onClick={() => handleClickFn(id)}>
+		<div
+			id={id}
+			className={`${styles.card}`}
+			onClick={() => handleClickFn(id)}
+		>
 			{!isFlipped ? (
 				<div
-					className={`${styles.cardBack} ${isFlipped ?? "isFlipped"}`}
+					className={`${styles.cardBack} ${
+						wasMatched === true ? styles.wasMatch : ""
+					}`}
 				>
-					?
+					{" "}
 				</div>
 			) : (
 				<div
 					className={`${styles.cardFront} ${
-						isFlipped ?? "isFlipped"
+						wasMatched === true ? styles.wasMatch : ""
 					}`}
 				>
 					<Symbol value={value} alt={alt} />

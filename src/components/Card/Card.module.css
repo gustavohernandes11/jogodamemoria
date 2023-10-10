@@ -20,15 +20,15 @@
 
 .cardFront {
 	font-weight: 700;
+	background-color: #625b63;
 	font-size: 3.12rem;
 	color: #8e789c;
-	background-color: #472c58;
 	transform: rotateY(180deg);
 }
 
 .cardBack {
 	font-size: 2.25rem;
-	background-color: #3c363d;
+	background-color: #472c58;
 }
 .cardFront,
 .cardBack {
@@ -45,4 +45,8 @@
 }
 .isFlipped:hover {
 	cursor: unset;
+}
+.wasMatch {
+	background-color: rgb(95, 172, 114);
+	animation: infinite 1s alternate-reverse;
 }

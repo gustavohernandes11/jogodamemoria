@@ -13,69 +13,98 @@ export const Board = () => {
 	const [cards, setCards] = useState(() => resetDeck(initialCards));
 	const [matches, setMatches] = useState(0);
 	const [steps, setSteps] = useState(0);
+	const [onPause, setOnPause] = useState(false);
 
-	function resetCards() {
+	const resetCards = () => {
 		setCards(() => resetDeck(initialCards));
 		setSteps(() => 0);
 		setMatches(() => 0);
 		first.current = null;
 		second.current = null;
 		unflip.current = false;
-	}
+	};
+	const syncWait = (ms) => {
+		const end = Date.now() + ms;
+		while (Date.now() < end) continue;
+	};
 
-	function unflipcards() {
+	const unflipCards = () => {
 		first.current.flipped = false;
 		second.current.flipped = false;
 		first.current = null;
 		second.current = null;
-	}
+	};
 
-	function handleClick(id) {
-		const newCards = cards;
-		const newState = newCards?.map((card) => {
-			// if select the same card
-			if (card.id !== id) {
-				return card;
-			}
-			// if the card is alread flipped
-			if (card.flipped) {
-				return card;
-			}
+	const handleClick = (id) => {
+		const currentCards = cards;
+		let newState = currentCards?.map((card) => {
+			if (card.id !== id || card.matched || onPause) return card;
 
-			// verify
-			if (unflip && first.current && second.current) {
-				if (first.current.value === second.current.value) {
-					first.current = null;
-					second.current = null;
-				} else {
-					unflipcards();
-				}
-				unflip.current = false;
-			}
-
-			if (first.current && second.current) {
-				unflip.current = true;
-			}
-
-			// set the selected card in first or second
 			if (card.id === id) {
-				setSteps((s) => s + 1);
+				card.flipped = true;
 				if (!first.current) {
 					first.current = card;
-					card.flipped = true;
-					return card;
-				} else if (!second.current) {
+					setSteps((s) => s + 1);
+				} else if (!second.current && first.current.id !== id) {
 					second.current = card;
-					card.flipped = true;
-					if (first.current.value === second.current.value) {
-						setMatches((m) => m + 2);
-					}
-					return card;
+					setSteps((s) => s + 1);
 				}
+
+				return card;
 			}
 		});
+
+		if (
+			first?.current &&
+			second?.current &&
+			first.current.value === second.current.value
+		) {
+			first.current.matched = true;
+			second.current.matched = true;
+			setMatches((m) => m + 2);
+
+			let currentCards = cards;
+			let newCards = currentCards?.map((card) => {
+				if (
+					card.id === first.current.id ||
+					card.id === second.current.id
+				) {
+					card.matched = true;
+				}
+				return card;
+			});
+			first.current = null;
+			second.current = null;
+			setCards(() => newCards);
+		}
+		if (
+			first.current &&
+			second.current &&
+			first.current.value !== second.current.value
+		) {
+			setOnPause(() => true);
+			setTimeout(() => {
+				let currentCards = cards;
+				let newCards = currentCards?.map((card) => {
+					if (
+						card.id === first.current.id ||
+						card.id === second.current.id
+					) {
+						card.flipped = false;
+					}
+					return card;
+				});
+
+				setCards(() => newCards);
+				unflipCards();
+			}, 1000);
+
+			setOnPause(() => false);
+		}
+		//
+
 		setCards(() => newState);
-	}
+	};
 
 	const first = useRef(null);
 	const second = useRef(null);
@@ -88,14 +117,15 @@ export const Board = () => {
 			)}
 			<Header matches={matches} steps={steps} totalCards={cards.length} />
 			<div className={styles.board} id="table">
-				{cards?.map((e, i) => (
+				{cards?.map((e) => (
 					<Card
 						value={e.value}
 						alt={e.alt}
 						id={e.id}
 						isFlipped={e.flipped}
+						wasMatched={e.matched}
 						handleClick={handleClick}
-						key={i}
+						key={e.id}
 					/>
 				))}
 			</div>
