@@ -49,6 +49,7 @@
 	height: 100%;
 	position: relative;
 
+	backface-visibility: hidden;
 	transition: transform 400ms;
 	transform-style: preserve-3d;
 }
